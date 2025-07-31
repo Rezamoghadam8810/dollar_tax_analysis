@@ -1,0 +1,8 @@
+# Ignore data directory with sensitive files
+/data/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
