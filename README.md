@@ -1,51 +1,38 @@
-# Dollar Tax Analysis (CGT)
+# تحلیل درآمد بالقوه مالیات بر عایدی سرمایه (CGT) از بازار دلار ایران
 
-This repository contains the Python code used to analyse the nominal and real gains from buying and selling U.S. dollars after a 12‑month holding period and to estimate the potential revenue from a tiered Capital Gains Tax (CGT) in different market scenarios.
+پروژه حاضر با هدف تحلیل رفتار سودآوری بازار دلار ایران و ارزیابی ظرفیت درآمدی دولت از محل اجرای مالیات بر عایدی سرمایه (CGT) طراحی شده است. این تحلیل با استفاده از داده‌های تاریخی نرخ ارز و نرخ تورم رسمی (۱۳۹۱ تا ۱۴۰۳) انجام شده و بر مبنای سناریوهای مختلف نرخ CGT، نتایج عددی و گرافیکی دقیقی ارائه می‌دهد.
 
-## Overview
+---
 
-The script performs the following steps:
+## 📊 ویژگی‌های اصلی پروژه
 
-1. **Load data** – imports daily dollar price data and annual inflation rates.
-2. **Compute 12‑month returns** – calculates buy and sell prices, nominal gains and real gains (adjusted for inflation).
-3. **Visualise trends** – generates line charts of price trends, nominal gains, distributions of real gains and comparisons of average gains by purchase year.
-4. **Define a tiered CGT function** – models a stepped tax rate and applies it to individual gains.
-5. **Scenario analysis** – evaluates three market scenarios (conservative, median, optimistic) at different realisation rates to estimate total tax revenue, and plots the results.
+- **تحلیل روند قیمت دلار:** بررسی رفتار بازار طی بیش از یک دهه
+- **تنظیم داده با تورم:** تعدیل قیمت‌ها بر مبنای شاخص بهای کالاها و خدمات مصرفی
+- **مدل‌سازی سناریوهای CGT:** بررسی اثر نرخ‌های CGT مختلف (۵٪، ۱۰٪، ۲۰٪)
+- **شبیه‌سازی بازدهی سرمایه‌گذاری دلاری**
+- **برآورد درآمد دولت در سناریوهای مختلف فروش**
 
-## Usage
+---
 
-Due to journal restrictions, the dataset is **not included** in this repository. To reproduce the analysis:
+## 🛠 تکنولوژی‌ها و ابزارهای مورد استفاده
 
-1. Obtain the following data files:
-   - `dollar_change_columns.csv` – daily dollar prices with columns `open`, `low`, `high`, `close`, `change`, `persent_change`, `miladi_date` and `shamsi_date`.
-   - `Iran_Tavarom.xlsx` – annual inflation rates with columns `year_miladi` and `persent`.
-2. Create a folder named `data` in the repository root and place the files inside it. The script expects them at `data/dollar_change_columns.csv` and `data/Iran_Tavarom.xlsx`.
-3. Install required packages:
+| ابزار | کاربرد |
+|------|--------|
+| Python | زبان اصلی پروژه |
+| Pandas, NumPy | پردازش و تحلیل داده |
+| Matplotlib, Seaborn | مصورسازی روندها و خروجی‌ها |
+| Jupyter Notebook | مستندسازی تحلیل گام‌به‌گام |
+| Excel | تهیه داده‌های پایه و همگام‌سازی |
 
-   ```bash
-   pip install pandas numpy matplotlib seaborn
-   ```
+---
 
-4. Run the analysis:
+## 📁 ساختار پوشه‌ها
 
-   ```bash
-   python tax_analysis.py
-   ```
-
-You can comment out or modify sections of the script to generate only the plots or analyses you need.
-
-When the companion paper is published and data restrictions are lifted, the dataset will be added or a link to the source will be provided.
-
-## Repository structure
-
-```
-.
-├── data/                # Place data files here (not included)
-├── tax_analysis.py      # Main analysis script
-├── README.md            # Project overview and usage instructions
-└── LICENSE              # License for this project (e.g., MIT)
-```
-
-## License
-
-This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+```bash
+dollar_tax_analysis/
+├── data/                     # داده‌های خام (عمومی یا شبیه‌سازی‌شده)
+├── figures/                  # نمودارهای خروجی پروژه
+├── results/                  # فایل‌های PDF یا Excel خلاصه تحلیل‌ها
+├── dollar_analysis_final.ipynb  # نوت‌بوک اصلی تحلیل
+├── README.md
+└── requirements.txt          # لیست کتابخانه‌های مورد نیاز
